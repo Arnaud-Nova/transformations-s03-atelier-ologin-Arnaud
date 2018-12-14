@@ -1,0 +1,112 @@
+#app {
+  background: #fafafa;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#header, #footer {
+  background: #ffffff;
+  border-color: #cccccc;
+  border-style: solid;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  color: #00d1b2;
+  border-bottom-width: 1px;
+}
+
+#app-title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#login {
+  width: 380px;
+  margin: 4em auto;
+  padding: 1.5em;
+  box-shadow: 0 0 20px #aaaaaa;
+  border-top: 3px solid #00d1b2;
+  border-radius: 4px;
+  background: #f1f1f1;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-title {
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: bold;
+  color: #00d1b2;
+}
+
+.field {
+  margin-top: 0.2em;
+  padding: 0.5em 0;
+  font-size: 0.7em;
+  color: #999999;
+}
+
+.field-label {
+  display: block;
+  padding: 0.2em 0;
+  font-weight: bold;
+  color: #000000;
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.2em 0.4em;
+  border: 1px solid #cccccc;
+}
+
+.field-info {
+  margin-top: 0.3em;
+}
+
+.field--valid {
+  border-color: #00d1b2;
+}
+
+.field--invalid {
+  border-color: #ff3860;
+}
+
+#login-submit {
+  align-self: flex-end;
+  background-color: #00d1b2;
+  color: #ffffff;
+  margin-top: 1em;
+  padding: 0.5em 0.8em;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.error {
+  background: #ff3860;
+  color: #ffffff;
+  padding: 1em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+#footer {
+  padding-top: 0.5em;
+  border-top-width: 1px;
+  text-align: center;
+  font-size: 0.8em;
+}
