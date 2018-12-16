@@ -18,5 +18,11 @@
         <a href="#">À propos</a>
         <a href="#">FAQ</a>
         <a href="#">Contact</a>
+        <?php
+        if (isset($_SESSION['id'])) :?>
+          <a href="#">Déconnexion</a>
+        <?php
+        endif;
+        ?>
       </nav>
     </header>

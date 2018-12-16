@@ -16,7 +16,7 @@
           name="username"
           type="text"
           placeholder="Identifiant"
-          value="une valeur"
+          value=""
         />
         <p class="field-info">Obligatoire - doit contenir au minimum 3 caractères</p>
       </div>
