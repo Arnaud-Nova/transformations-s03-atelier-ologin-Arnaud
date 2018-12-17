@@ -13,14 +13,14 @@
     <header id="header">
       <h1 id="app-title"><a href="#">oLogin</a></h1>
       <nav id="nav">
-        <a href="./">Accueil</a>
-        <a href="#">Profil</a>
+        <a href="index.php">Accueil</a>
+        <a href="profil.php">Profil</a>
         <a href="#">À propos</a>
         <a href="#">FAQ</a>
         <a href="#">Contact</a>
         <?php
-        if (isset($_SESSION['id'])) :?>
-          <a href="#">Déconnexion</a>
+        if (!empty($_SESSION['username'])) :?>
+          <a href="index.php">Déconnexion</a>
         <?php
         endif;
         ?>

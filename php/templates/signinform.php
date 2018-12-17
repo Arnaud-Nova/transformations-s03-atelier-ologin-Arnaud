@@ -1,5 +1,5 @@
 <div id="login">
-    <form action="" id="login-form" method="post" autocomplete="off">
+    <form action="subscriptiondone.php" id="login-form" method="post" autocomplete="off">
       <div id="form-title">
         Création d'un nouveau compte
       </div>

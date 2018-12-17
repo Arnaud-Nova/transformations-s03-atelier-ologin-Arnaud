@@ -1,5 +1,6 @@
+
 <div id="login">
-    <form action="" id="login-form" method="post" autocomplete="off">
+    <form action="profil.php" id="login-form" method="post" autocomplete="off">
       <div id="form-title">
         Connexion
       </div>
