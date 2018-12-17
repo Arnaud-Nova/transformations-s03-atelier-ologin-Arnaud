@@ -40,3 +40,4 @@
       <button id="login-submit">Connexion</button>
     </form>
     </div>
+    <script src="../js/app.js"></script>

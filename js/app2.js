@@ -15,18 +15,24 @@ var app = {
     var form = document.querySelector('#login-form');
     form.addEventListener('submit', app.isValidForm);
 
+
+    app.confirmPwd = document.querySelectorAll('.input-confirm-password');
+    app.pwd = document.querySelectorAll('.input-password');
+
     var inputs = document.querySelectorAll('.field-input');
+    console.log(inputs);
     for (var i = 0; i < inputs.length; i++) {
       var input = inputs[i];
       input.addEventListener('blur', function(evt) {
-        var text = input.value;
-        app.validateTextLength(text, input);
+        console.log(evt);
+        var text = evt.target.value;
+        app.validateTextLength(text, evt);
       });
     }
   },
 
   isValidForm: function(evt) {
-
+  
     /**
      * 1. vérifier, pour chaque input, si l'input est valide => boucle
      * 2. form invalide si au moins 1 input est invalide => if (||)
@@ -34,7 +40,6 @@ var app = {
     var invalidForm = app.formHasErrors();
     if (invalidForm) {
       evt.preventDefault();
-  
       var errorsArea = document.querySelector('#errors');
       errorsArea.innerHTML = '';
       for (var i = 0; i < app.errors.length; i++) {
@@ -44,12 +49,13 @@ var app = {
         errorsArea.appendChild(errorMessage);
       }
     }
+
+    
   },
 
   formHasErrors: function() {
     // 1. Sélection des inputs > validation des inputs
     var inputs = document.querySelectorAll('.field-input');
-    console.log(inputs);
 
     var results = [];
     app.errors = [];
@@ -62,27 +68,20 @@ var app = {
         app.errors.push(errorMessage);
       }
     }
-
-    // Autre possiblité pour valider les deux champs :
-    // - faire 2x document.querySelector('#id-du-champ');
-    // - faire 2x app.validateTextLength :
-    //     results.push(app.validateTextLength(inputUsername.value));
-    //     results.push(app.validateTextLength(inputPassword.value));
-
+    if (app.confirmPwd[0].value != app.pwd[0].value) {
+      app.errors.push('Les mots de passe doivent être identiques');
+    }
     return results.includes(false);
   },
 
-  /**
-   * Valide un texte d'un input :
-   * - texte valide si > 3 caractères
-   * - affichage d'une bordure sur l'input, en fonction de text valide ou pas
-   */
   validateTextLength: function(text, input) {
     if (text.length < 3) {
-      input.classList.add('field--invalid');
+      input.srcElement.classList.remove('field--valid');
+      input.srcElement.classList.add('field--invalid');
       return false;
     } else {
-      input.classList.add('field--valid');
+      input.srcElement.classList.remove('field--invalid');
+      input.srcElement.classList.add('field--valid');
       return true;
     }
 

@@ -54,3 +54,4 @@
       <button id="login-submit">validation</button>
     </form>
     </div>
+    <script src="../js/app2.js"></script>
